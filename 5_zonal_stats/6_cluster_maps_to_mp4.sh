@@ -1,0 +1,1 @@
+ffmpeg -framerate 1 -pattern_type glob -i '/Users/wmk934/data/perceptual_models/img/cluster_maps/clustering_outcomes_*.png' -c:v libx264 -pix_fmt yuv420p -vf scale=1280:-2 /Users/wmk934/data/perceptual_models/img/cluster_maps/clustering_outcomes_2_49.mp4
