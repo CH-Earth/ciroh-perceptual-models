@@ -1,0 +1,35 @@
+## Contains settings for perceptual model project processing
+# Tracking certain settings (such as local file locations) here helps porting the code to other machines.
+# Tracking data sources (URLs) here helps transparency. 
+
+# Overview:
+# [setting] | [value] # [description]
+#
+# [setting]     : Scripts look for this string to identify the line in this file that contains the information they need.
+# [value]       : Value of the setting used by the scripts. 
+# [description] : Description for user's benefit
+
+# Raw data
+# Geospatial data downloaded using CAMELS-SPAT code
+
+
+# Main settings
+code_path | /Users/wmk934/code/perceptual_models/       | string  # Root path of processing code
+raw_path  | /Users/wmk934/data/NorthAmerica_geospatial/ | string  # Root path of raw data location
+data_path | /Users/wmk934/data/perceptual_models/       | string  # Root path of project data location
+temp_path | /Users/wmk934/data/perceptual_models/tmp/   | string  # Path for temporary storage
+
+# 1. Python setup
+venv_path | /Users/wmk934/data/perceptual_models/ | string  # Path where the Python virtual environment will be created
+venv_name | perc-model-env                        | string  # Virtual environment name
+reqs_path | 1_Python_setup/                       | string  # Sub-folders in root that contain requirements
+reqs_file | 0_requirements.txt                    | string  # Python environment requirements for `pip install -r reqs.txt`
+
+# 2. Derived data
+topo_crs     | ESRI:102009 | string  # Coordinate Reference System to calculate slope and aspect in. ESRI:102009 is North_America_Lambert_Conformal_Conic. Based on recommendation from Chris
+last_n_years | 10          | integer # Number of years to use for "recent" data > used to get monthly MODIS LAI averages and mode MODIS land cover
+
+# 3. Resampling
+domain | -179.5,-50,5,85 | string # domain for resampling; based on CAMELS-SPAT domain
+x_res | 0.00025 | float # highest resolution in source datasets in x direction
+y_res | -0.00025 | float # highest resolution in source datasets in y direction

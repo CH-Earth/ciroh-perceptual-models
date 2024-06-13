@@ -1,0 +1,12 @@
+fiona
+gdal[numpy]==3.7.3
+geopandas
+ipympl
+jupyter
+matplotlib
+numpy
+rasterio
+rasterstats
+scikit-learn
+scipy
+seaborn
